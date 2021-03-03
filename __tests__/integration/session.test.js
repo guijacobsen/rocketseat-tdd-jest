@@ -7,10 +7,13 @@ describe("Authentication", () => {
   beforeEach(async () => {
     await truncate();
   });
+  afterEach(async () => {
+    await truncate();
+  });
   it("should authenticate with valid credentials", async () => {
     const user = await User.create({
       name: "Guilherme",
-      email: "guilherme.jacobsen@gmail.com",
+      email: "guijacobsen@gmail.com",
       password_hash: "abc123",
     });
 
