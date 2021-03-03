@@ -1,5 +1,7 @@
+const SessionController = require("./app/controllers/SessionController");
+
 const routes = require("express").Router();
 
-const { User } = require("./models");
+routes.post("/session", SessionController.store);
 
 module.exports = routes;
