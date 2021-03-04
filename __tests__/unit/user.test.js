@@ -7,9 +7,6 @@ describe("User", () => {
   beforeEach(async () => {
     await truncate();
   });
-  afterEach(async () => {
-    await truncate();
-  });
 
   it("should encrypt user password", async () => {
     const user = await User.create({

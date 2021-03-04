@@ -8,7 +8,7 @@
     "start": "node src/server.js",
     "start:dev": "nodemon src/server.js --ignore __tests__",
     "pretest": "NODE_ENV=test sequelize db:migrate",
-    "test": "NODE_ENV=test jest",
+    "test": "NODE_ENV=test jest --ci --verbose --forceExit --runInBand",
     "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
   },
   "dependencies": {
