@@ -1,4 +1,5 @@
 const { User } = require("../models");
+
 class SessionController {
   async store(req, res) {
     try {
@@ -10,7 +11,7 @@ class SessionController {
       if (!(await user.checkPassword(password)))
         return res.status(401).json({ message: "Invalid credentials" });
 
-      return res.status(200).send();
+      return res.status(200).json({ user, token: user.generateToken() });
     } catch (error) {
       console.log("error : ", error);
       return res.status(500).json({ message: "Unexpected error" });
